@@ -1,0 +1,54 @@
+/*
+* FUNCTION
+*/
+
+let myName: string = 'Ivan';
+let myAge: number = 50;
+
+// fn in js
+function getMyName() {
+	return myName;
+}
+
+// fn in ts
+
+function getMyNames(): string { // явно указываем возвращаемое значение
+	return myName;
+}
+
+function getMyAge(): number { // явно указываем возвращаемое значение
+	return myAge;
+}
+
+
+function getAge(age: number, prefix: string): string {
+	return age + prefix;
+}
+
+// При вызове важна полседовательность передаваемых значений
+
+getAge(40, 'Ivas');
+
+// можно,как в es6 передавать дефолтные значения
+
+ function getAge2(age: number, prefix: string = 'strings'): string {
+	return age + prefix;
+}
+getAge2(40); // 40strings
+
+/* ------------------------------------- */
+// функция которая ничего не возвращает, тип void
+function consoleLog(argument: string): void {
+	console.log(argument);
+}
+
+
+/*----------------------------------------*/
+
+let mySum: (n1: number, n2: number) => number;  // объявляем что данная переменная является функцией
+
+function sum(n1: number, n2: number): number {
+	return n1 + n2;
+}
+
+mySum = sum;
