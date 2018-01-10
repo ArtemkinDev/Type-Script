@@ -1,0 +1,58 @@
+/*
+* OBJECT
+*/
+
+let user: {name: string, age: number, logName: () => void, jobs: string[]} = {
+	name: 'Sasha',
+	age: 50,
+	logName(): void {
+		console.log(this.name);
+	},
+	jobs: ['a','b']
+}
+
+
+// создаём второго юзера
+
+let user2: {name: string, age: number, logName: () => void, jobs: string[]} = {
+	name: 'Max',
+	age: 25,
+	logName(): void {
+		console.log(this.name);
+	},
+	jobs: ['a','b']
+}
+
+// более короткое описание типов объекта
+
+type User = {
+	name: string, 
+	age: number, 
+	logName: () => void, 
+	jobs: string[],
+	defaultFun?: () => number // необязательная поле 
+}
+
+let user3: User = {
+	name: 'Max',
+	age: 25,
+	logName(): void {
+		console.log(this.name);
+	},
+	jobs: ['a','b']
+}
+
+/* если нам необходимо сделать необязательное поле, которое будет не у всех объектов
+* то после неё необходимо поставить ?
+*/
+let user4: User = {
+	name: 'Max',
+	age: 25,
+	logName(): void {
+		console.log(this.name);
+	},
+	jobs: ['a','b'],
+	defaultFun(): number {
+		return this.age;
+	} 
+}
