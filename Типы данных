@@ -1,0 +1,18 @@
+// string
+let str: string = 'string';
+
+// number
+let n: number = 10;
+
+// boolean
+let isTrue: boolean = true;
+let isFalse: boolean = false;
+
+// other любой тип данных
+let unknown: any = '1';
+
+unknown = 1;
+
+// несколько типов
+let unknown2: string | number = 1;
+
